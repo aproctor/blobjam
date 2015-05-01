@@ -11,6 +11,7 @@ public class Blob : MonoBehaviour {
 	public float groundedJumpTolerance = 0.04f;
 
 	private Rigidbody rigidBody = null;
+	private Animator blobAnimator = null;
 
 	public bool Grounded {
 		get {
@@ -21,6 +22,7 @@ public class Blob : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this.rigidBody = this.GetComponent<Rigidbody> ();
+		this.blobAnimator = this.GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -29,6 +31,20 @@ public class Blob : MonoBehaviour {
 		if (selected) {
 			UpdateInputMovement();
 		}
+
+		this.UpdateAnimations ();
+	}
+
+	void UpdateAnimations() {
+		float xSqr = Mathf.Pow(this.rigidBody.velocity.x, 2);
+		float zSqr = Mathf.Pow(this.rigidBody.velocity.z, 2);
+
+		float horizontalVelocity = Mathf.Sqrt(xSqr + zSqr);
+		Debug.LogError ("H: " + horizontalVelocity);
+		this.blobAnimator.SetFloat ("_VelY", this.rigidBody.velocity.y);
+		this.blobAnimator.SetFloat ("_VelH", horizontalVelocity);
+		this.blobAnimator.SetBool ("Grounded", this.Grounded);
+
 	}
 
 	void UpdateInputMovement() {
