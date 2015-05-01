@@ -3,13 +3,20 @@ using System.Collections;
 
 public class LevelManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+	private int curLevel = -1;
+	public string[] Levels;
+
+
+	public void LoadNextLevel() {
+		if (this.curLevel < this.Levels.Length - 1) {
+			Application.LoadLevel(this.Levels[++this.curLevel]);
+		} else {
+			this.Reset();
+			Application.LoadLevel("Menu");
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	private void Reset() {
+		this.curLevel = -1;
 	}
 }

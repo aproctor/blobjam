@@ -10,7 +10,7 @@ public class LevelExit : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 
 		if (other.GetComponent<Blob> ()) {
-			Debug.LogError ("EXIT");
+			this.level.Finish();
 		}
 
 	}
