@@ -40,7 +40,6 @@ public class Blob : MonoBehaviour {
 		float zSqr = Mathf.Pow(this.rigidBody.velocity.z, 2);
 
 		float horizontalVelocity = Mathf.Sqrt(xSqr + zSqr);
-		Debug.LogError ("H: " + horizontalVelocity);
 		this.blobAnimator.SetFloat ("_VelY", this.rigidBody.velocity.y);
 		this.blobAnimator.SetFloat ("_VelH", horizontalVelocity);
 		this.blobAnimator.SetBool ("Grounded", this.Grounded);
