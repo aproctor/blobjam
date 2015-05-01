@@ -10,6 +10,8 @@ public class Blob : MonoBehaviour {
 	public float jumpForce = 10f;
 	public float groundedJumpTolerance = 0.04f;
 
+	public float killY = -10f;
+
 	private Rigidbody rigidBody = null;
 	private Animator blobAnimator = null;
 
@@ -30,9 +32,22 @@ public class Blob : MonoBehaviour {
 
 		if (selected) {
 			UpdateInputMovement();
+
+			if(Input.GetButtonDown("Fire1")) {
+				this.Split();
+			}
 		}
 
+
 		this.UpdateAnimations ();
+
+		if (this.transform.position.y < killY) {
+			GameObject.Destroy(this.gameObject);
+		}
+	}
+
+	public void Split() {
+		GameObject.Instantiate (this);
 	}
 
 	void UpdateAnimations() {

@@ -1,4 +1,4 @@
 [x] Character controller
-[ ] button / switch
-[ ] exit prop
-[ ] Level Manager
+[x] button / switch
+[x] exit prop
+[x] Level Manager
