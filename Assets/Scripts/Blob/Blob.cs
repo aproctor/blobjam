@@ -4,6 +4,7 @@ using System.Collections;
 public class Blob : MonoBehaviour {
 
 	#region attrs
+	[Header("Movement")]
 	public bool selected = true;
 	public float moveSpeed = 5f;
 	public float walkSpeed = 5f;
@@ -11,12 +12,17 @@ public class Blob : MonoBehaviour {
 	public float jumpForce = 10f;
 	public float groundedJumpTolerance = 0.04f;
 
+	[Header("Split Controls")]
+	public float minScale = 0.5f;
+	public float maxScale = 3f;
+	public float splitScale = 0.8f;
 	public bool fireSplits = false;
 	public float killY = -10f;
 
 	private Rigidbody rigidBody = null;
 	private Animator blobAnimator = null;
 
+	[Header("Component Links")]
 	[SerializeField]
 	private BlobMaterial currentMaterial = null;
 	[SerializeField]
@@ -53,7 +59,7 @@ public class Blob : MonoBehaviour {
 		this.UpdateAnimations ();
 
 		if (this.transform.position.y < killY) {
-			GameObject.Destroy(this.gameObject);
+			this.Die();
 		}
 	}
 
@@ -88,14 +94,16 @@ public class Blob : MonoBehaviour {
 	}
 	#endregion
 
-	void OnDestroy() {
+	public void Die() {
 		BlobGame.Instance.RemoveBlob ();
+		//TODO tween time
+		GameObject.Destroy (this.gameObject);
 	}
 
 
 	public void Split() {
-		float targetScale = this.transform.localScale.x * 0.8f;
-		if (targetScale < 0.5) {
+		float targetScale = this.transform.localScale.x * this.splitScale;
+		if (targetScale < this.minScale) {
 			return;
 		}
 		this.transform.localScale = Vector3.one * targetScale;
