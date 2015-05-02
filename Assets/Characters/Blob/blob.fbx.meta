@@ -36,6 +36,36 @@ ModelImporter:
     100056: pos_z_group
     100058: pos_z_sub_group
     100060: squash_n_stretch_control
+    100062: blob:blob
+    100064: blob:blob_animate
+    100066: blob:blob_bind
+    100068: blob:bottom_control
+    100070: blob:fineHeadControl
+    100072: blob:head
+    100074: blob:head 1
+    100076: blob:head_group
+    100078: blob:head_sub_group
+    100080: blob:mid
+    100082: blob:mid 1
+    100084: blob:mid_group
+    100086: blob:mid_sub_group
+    100088: blob:neg_x
+    100090: blob:neg_x 1
+    100092: blob:neg_x_group
+    100094: blob:neg_x_sub_group
+    100096: blob:neg_z
+    100098: blob:neg_z 1
+    100100: blob:neg_z_group
+    100102: blob:neg_z_sub_group
+    100104: blob:pos_x
+    100106: blob:pos_x 1
+    100108: blob:pos_x_group
+    100110: blob:pos_x_sub_group
+    100112: blob:pos_z
+    100114: blob:pos_z 1
+    100116: blob:pos_z_group
+    100118: blob:pos_z_sub_group
+    100120: blob:squash_n_stretch_control
     400000: //RootNode
     400002: blob
     400004: blob_animate
@@ -67,9 +97,41 @@ ModelImporter:
     400056: pos_z_group
     400058: pos_z_sub_group
     400060: squash_n_stretch_control
+    400062: blob:blob
+    400064: blob:blob_animate
+    400066: blob:blob_bind
+    400068: blob:bottom_control
+    400070: blob:fineHeadControl
+    400072: blob:head
+    400074: blob:head 1
+    400076: blob:head_group
+    400078: blob:head_sub_group
+    400080: blob:mid
+    400082: blob:mid 1
+    400084: blob:mid_group
+    400086: blob:mid_sub_group
+    400088: blob:neg_x
+    400090: blob:neg_x 1
+    400092: blob:neg_x_group
+    400094: blob:neg_x_sub_group
+    400096: blob:neg_z
+    400098: blob:neg_z 1
+    400100: blob:neg_z_group
+    400102: blob:neg_z_sub_group
+    400104: blob:pos_x
+    400106: blob:pos_x 1
+    400108: blob:pos_x_group
+    400110: blob:pos_x_sub_group
+    400112: blob:pos_z
+    400114: blob:pos_z 1
+    400116: blob:pos_z_group
+    400118: blob:pos_z_sub_group
+    400120: blob:squash_n_stretch_control
     4300000: blob
+    4300002: blob:blob
     9500000: //RootNode
     13700000: blob
+    13700002: blob:blob
   materials:
     importMaterials: 1
     materialName: 0
