@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Blob : MonoBehaviour {
 
+	#region attrs
 	public bool selected = true;
 	public float moveSpeed = 5f;
 	public float walkSpeed = 5f;
@@ -16,18 +17,27 @@ public class Blob : MonoBehaviour {
 	private Rigidbody rigidBody = null;
 	private Animator blobAnimator = null;
 
+	[SerializeField]
+	private BlobMaterial currentMaterial = null;
+	[SerializeField]
+	private SkinnedMeshRenderer meshRenderer = null;
+
 	public bool Grounded {
 		get {
 			return Mathf.Abs(this.rigidBody.velocity.y) < groundedJumpTolerance;
 		}
 	}
+	#endregion
 
 	// Use this for initialization
 	void Start () {
 		this.rigidBody = this.GetComponent<Rigidbody> ();
 		this.blobAnimator = this.GetComponent<Animator> ();
+
+		this.ApplyMat(currentMaterial);
 	}
-	
+
+	#region update_methods
 	// Update is called once per frame
 	void Update () {
 
@@ -47,14 +57,6 @@ public class Blob : MonoBehaviour {
 		}
 	}
 
-	public void Split() {
-		float targetScale = this.transform.localScale.x * 0.8f;
-		if (targetScale < 0.5) {
-			return;
-		}
-		this.transform.localScale = Vector3.one * targetScale;
-		GameObject.Instantiate (this);
-	}
 
 	void UpdateAnimations() {
 		float xSqr = Mathf.Pow(this.rigidBody.velocity.x, 2);
@@ -83,5 +85,21 @@ public class Blob : MonoBehaviour {
 		float vertical = Input.GetAxis ("Vertical");
 
 		this.transform.position = this.transform.position + new Vector3 (vertical, 0f, -horizontal) * moveSpeed * Time.deltaTime;
+	}
+	#endregion
+
+
+	public void Split() {
+		float targetScale = this.transform.localScale.x * 0.8f;
+		if (targetScale < 0.5) {
+			return;
+		}
+		this.transform.localScale = Vector3.one * targetScale;
+		GameObject.Instantiate (this);
+	}
+
+	public void ApplyMat(BlobMaterial blobMat) {
+		this.meshRenderer.material = blobMat.mat;
+		this.currentMaterial = blobMat;
 	}
 }
