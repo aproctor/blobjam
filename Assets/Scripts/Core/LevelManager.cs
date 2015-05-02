@@ -3,16 +3,39 @@ using System.Collections;
 
 public class LevelManager : MonoBehaviour {
 
-	private int curLevel = -1;
+	private int curLevel = 0;
 	public string[] Levels;
+
+	public Level Level {
+		get; private set;
+	}
+
+	void Update() {
+		if (Input.GetButtonDown("Cancel")) {
+			this.ReloadLevel();
+		}
+	}
+
+	public void LevelLoaded(Level l) {
+		this.Level = l;
+		BlobGame.Instance.OnLevelLoaded();
+	}
+
+	public void LoadLevel(int index) {
+		Application.LoadLevel (this.Levels [index]);
+	}
 
 
 	public void LoadNextLevel() {
 		if (this.curLevel < this.Levels.Length - 1) {
-			Application.LoadLevel(this.Levels[++this.curLevel]);
+			LoadLevel(++this.curLevel);
 		} else {
 			LoadMenu();
 		}
+	}
+
+	public void ReloadLevel() {
+		LoadLevel(this.curLevel);
 	}
 
 	public void LoadMenu() {		
@@ -21,6 +44,6 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	private void Reset() {
-		this.curLevel = -1;
+		this.curLevel = 0;
 	}
 }

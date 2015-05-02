@@ -21,6 +21,14 @@ public class BlobGame : MonoBehaviour {
 
 	public LevelManager levelManager;
 
+	public enum GameState {
+		Loading,
+		Menu,
+		Playing,
+		Over
+	}
+	public GameState state = GameState.Loading;
+
 	// Use this for initialization
 	void Start () {
 		if (_instance == null || _instance == this) {
@@ -35,8 +43,20 @@ public class BlobGame : MonoBehaviour {
 	}
 
 
-	//TODO rename this
-	public void CountBlobs() {
+	void Update() {
+		if (this.state == GameState.Over) {			
+			if(Input.GetButtonDown("Cancel")) {
+				this.levelManager.ReloadLevel();
+			}
+			if(Input.GetButtonDown("Jump")) {
+				this.levelManager.LoadMenu();
+			}
+		}
+	}
+
+	public void OnLevelLoaded () {
+		this.state = GameState.Playing;
+	
 		Blob[] blobs = GameObject.FindObjectsOfType<Blob> ();
 		this.NumBlobs = blobs.Length;
 	}
@@ -50,12 +70,16 @@ public class BlobGame : MonoBehaviour {
 
 		if(this.NumBlobs <= 0) {
 			//Not ready to do this, level loads cause loops
-			//this.GameOver();
+			if(this.levelManager.Level.IsComplete) {
+				this.levelManager.LoadNextLevel();
+			} else {
+				this.GameOver();
+			}
 		}
 	}
 
 	public void GameOver() {
 		Debug.LogError ("GAME OVER!");
-		this.levelManager.LoadMenu();
+		this.state = GameState.Over;
 	}
 }

@@ -17,6 +17,7 @@ public class Blob : MonoBehaviour {
 	public float maxScale = 3f;
 	public float splitScale = 0.8f;
 	public bool fireSplits = false;
+	public float weight = 1f;
 	public float killY = -10f;
 
 	private Rigidbody rigidBody = null;
@@ -31,6 +32,12 @@ public class Blob : MonoBehaviour {
 	public bool Grounded {
 		get {
 			return Mathf.Abs(this.rigidBody.velocity.y) < groundedJumpTolerance;
+		}
+	}
+
+	public float Weight {
+		get {
+			return this.weight;
 		}
 	}
 	#endregion
@@ -107,6 +114,7 @@ public class Blob : MonoBehaviour {
 			return;
 		}
 		this.transform.localScale = Vector3.one * targetScale;
+		this.weight *= 0.5f;
 		GameObject.Instantiate (this);
 		BlobGame.Instance.AddBlob ();
 	}
