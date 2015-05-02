@@ -33,6 +33,12 @@ public class Blob : MonoBehaviour {
 			return Mathf.Abs(this.rigidBody.velocity.y) < groundedJumpTolerance;
 		}
 	}
+
+	public float Weight {
+		get {
+			return this.transform.lossyScale.x;
+		}
+	}
 	#endregion
 
 	// Use this for initialization
