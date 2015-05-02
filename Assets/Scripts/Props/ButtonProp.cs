@@ -3,6 +3,8 @@ using UnityEngine.Events;
 using System.Collections;
 
 public class ButtonProp : MonoBehaviour {
+	
+	private int numCurrentPressers = 0;
 
 	public enum ButtonType {
 		Hold,
@@ -28,7 +30,7 @@ public class ButtonProp : MonoBehaviour {
 		if (state == ButtonState.Locked) {
 			return;
 		}
-		if (other.GetComponent<Blob> ()) {
+		if (other.GetComponent<ButtonPresser> ()) {
 			//TODO abstract this so others can flick switches
 			state = ButtonState.Pushed;
 			buttonPushed.Invoke();
@@ -38,11 +40,24 @@ public class ButtonProp : MonoBehaviour {
 		}
 	}
 
+
+	void OnTriggerStay(Collider other) {
+		if (other.GetComponent<ButtonPresser> ()) {
+			numCurrentPressers++;
+		}
+	}
+
+
 	void OnTriggerExit(Collider other) {
-		if (other.GetComponent<Blob> ()) {
+		if (other.GetComponent<ButtonPresser> () && numCurrentPressers == 0) {
 			//TODO check for multiple things pressing the button
 			buttonReleased.Invoke();
 		}
+	}
+
+	void Update() {
+		//This is a brutal, but it's a jam, whatever
+		numCurrentPressers = 0;
 	}
 
 

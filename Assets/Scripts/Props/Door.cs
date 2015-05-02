@@ -4,6 +4,10 @@ using System.Collections;
 public class Door : MonoBehaviour {
 
 	public void OpenDoor() {
-		Debug.LogError ("OPENING");
+		this.GetComponent<Animator> ().SetBool("Open",true);
+	}
+
+	public void CloseDoor() {
+		this.GetComponent<Animator> ().SetBool("Open", false);
 	}
 }
