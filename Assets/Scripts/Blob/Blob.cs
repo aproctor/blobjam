@@ -47,6 +47,11 @@ public class Blob : MonoBehaviour {
 	}
 
 	public void Split() {
+		float targetScale = this.transform.localScale.x * 0.8f;
+		if (targetScale < 0.5) {
+			return;
+		}
+		this.transform.localScale = Vector3.one * targetScale;
 		GameObject.Instantiate (this);
 	}
 
