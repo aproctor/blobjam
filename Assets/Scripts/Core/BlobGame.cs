@@ -49,7 +49,8 @@ public class BlobGame : MonoBehaviour {
 		this.NumBlobs -= 1;
 
 		if(this.NumBlobs <= 0) {
-			this.GameOver();
+			//Not ready to do this, level loads cause loops
+			//this.GameOver();
 		}
 	}
 

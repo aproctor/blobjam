@@ -17,11 +17,7 @@ public class GameHud : MonoBehaviour {
 
 	void Update() {
 		//TODO don't really need to draw this often
-		ReDraw ();
-	}
-	
-	public void ReDraw() {
-		this.livesField.text = "Blobs: "+ blobGame.NumBlobs;
+		this.livesField.text = "Blobs: " + blobGame.NumBlobs;
 	}
 
 	public void Show() {
