@@ -20,10 +20,11 @@ public class Blob : MonoBehaviour {
 	public float weight = 1f;
 	public float killY = -10f;
 
-	private Rigidbody rigidBody = null;
-	private Animator blobAnimator = null;
 
 	[Header("Component Links")]
+	private Rigidbody rigidBody = null;
+	[SerializeField]
+	private Animator blobAnimator = null;
 	[SerializeField]
 	private BlobMaterial currentMaterial = null;
 	[SerializeField]
@@ -45,7 +46,7 @@ public class Blob : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this.rigidBody = this.GetComponent<Rigidbody> ();
-		this.blobAnimator = this.GetComponent<Animator> ();
+		//this.blobAnimator = this.GetComponent<Animator> ();
 
 		this.ApplyMat(currentMaterial);
 	}
@@ -97,7 +98,10 @@ public class Blob : MonoBehaviour {
 		float horizontal = Input.GetAxis ("Horizontal");
 		float vertical = Input.GetAxis ("Vertical");
 
-		this.transform.position = this.transform.position + new Vector3 (vertical, 0f, -horizontal) * moveSpeed * Time.deltaTime;
+		Vector3 targetSpeed = new Vector3 (vertical, 0f, -horizontal) * moveSpeed;
+
+		this.rigidBody.AddForce(targetSpeed - this.rigidBody.velocity, ForceMode.VelocityChange);
+		//this.transform.position = this.transform.position + new Vector3 (vertical, 0f, -horizontal) * moveSpeed * Time.deltaTime;
 	}
 	#endregion
 
