@@ -29,14 +29,14 @@ public class LevelExit : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		Blob blob = other.GetComponent<Blob>();
 
-		if (blob && this.Full == false) {
+		if (blob && this.Full == false && this.volume + blob.Weight <= this.capcity) {
 			this.volume += blob.Weight;
 
 			SetFillScale();
 
 			if(this.Full) {
 				OnFull.Invoke();
-			}
+			}			
 
 			blob.Die();
 		}

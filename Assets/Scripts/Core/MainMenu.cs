@@ -14,13 +14,14 @@ public class MainMenu : MonoBehaviour {
 	void Start () {
 		//TODO wait for a delay to animate the title screen
 		state = MenuState.Idle;
+		BlobGame.Instance.state = BlobGame.GameState.Menu;
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if(state == MenuState.Idle) {
 			if(Input.GetButtonDown("Jump")) {
-				BlobGame.Instance.levelManager.LoadNextLevel();
+				BlobGame.Instance.levelManager.LoadLevel(0);
 				state = MenuState.Exiting;
 			}
 		}
