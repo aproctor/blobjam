@@ -1,0 +1,35 @@
+﻿using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+
+public class GameHud : MonoBehaviour {
+
+	[SerializeField]
+	private BlobGame blobGame = null;
+	private Canvas canvas = null;
+
+	[SerializeField]
+	private Text livesField;
+
+	void Start() {
+		this.canvas = this.GetComponent<Canvas> ();
+	}
+
+	void Update() {
+		//TODO don't really need to draw this often
+		ReDraw ();
+	}
+	
+	public void ReDraw() {
+		this.livesField.text = "Blobs: "+ blobGame.NumBlobs;
+	}
+
+	public void Show() {
+		this.canvas.gameObject.SetActive (true);
+	}
+
+	public void Hide() {
+		this.canvas.gameObject.SetActive (false);
+	}
+	
+}

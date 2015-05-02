@@ -2,7 +2,10 @@
 using System.Collections;
 
 public class BlobGame : MonoBehaviour {
+	
+	public GameHud hud;
 
+	public int NumBlobs { get; private set; }
 
 	private static BlobGame _instance = null;
 	public static BlobGame Instance {
@@ -25,8 +28,33 @@ public class BlobGame : MonoBehaviour {
 			DontDestroyOnLoad(this);
 
 			this.levelManager = this.GetComponent<LevelManager>();
+			this.NumBlobs = 1;
 		} else {
 			Debug.Log("There can only be one! BlobGame singleton freakout");
 		}
+	}
+
+
+	//TODO rename this
+	public void CountBlobs() {
+		Blob[] blobs = GameObject.FindObjectsOfType<Blob> ();
+		this.NumBlobs = blobs.Length;
+	}
+
+	public void AddBlob() {
+		this.NumBlobs += 1;
+	}
+
+	public void RemoveBlob () {
+		this.NumBlobs -= 1;
+
+		if(this.NumBlobs <= 0) {
+			this.GameOver();
+		}
+	}
+
+	public void GameOver() {
+		Debug.LogError ("GAME OVER!");
+		this.levelManager.LoadMenu();
 	}
 }

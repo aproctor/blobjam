@@ -88,6 +88,10 @@ public class Blob : MonoBehaviour {
 	}
 	#endregion
 
+	void OnDestroy() {
+		BlobGame.Instance.RemoveBlob ();
+	}
+
 
 	public void Split() {
 		float targetScale = this.transform.localScale.x * 0.8f;
@@ -96,6 +100,7 @@ public class Blob : MonoBehaviour {
 		}
 		this.transform.localScale = Vector3.one * targetScale;
 		GameObject.Instantiate (this);
+		BlobGame.Instance.AddBlob ();
 	}
 
 	public void ApplyMat(BlobMaterial blobMat) {

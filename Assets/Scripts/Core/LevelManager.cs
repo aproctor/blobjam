@@ -11,9 +11,13 @@ public class LevelManager : MonoBehaviour {
 		if (this.curLevel < this.Levels.Length - 1) {
 			Application.LoadLevel(this.Levels[++this.curLevel]);
 		} else {
-			this.Reset();
-			Application.LoadLevel("Menu");
+			LoadMenu();
 		}
+	}
+
+	public void LoadMenu() {		
+		this.Reset();
+		Application.LoadLevel("Menu");
 	}
 
 	private void Reset() {
