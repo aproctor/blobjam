@@ -10,6 +10,7 @@ public class Blob : MonoBehaviour {
 	public float jumpForce = 10f;
 	public float groundedJumpTolerance = 0.04f;
 
+	public bool fireSplits = false;
 	public float killY = -10f;
 
 	private Rigidbody rigidBody = null;
@@ -33,7 +34,7 @@ public class Blob : MonoBehaviour {
 		if (selected) {
 			UpdateInputMovement();
 
-			if(Input.GetButtonDown("Fire1")) {
+			if(this.fireSplits && Input.GetButtonDown("Fire1")) {
 				this.Split();
 			}
 		}
