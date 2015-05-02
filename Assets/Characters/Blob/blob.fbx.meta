@@ -1,0 +1,130 @@
+fileFormatVersion: 2
+guid: 20eac3a5c9d9c416c9fb4320639a0621
+timeCreated: 1430528872
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: blob
+    100004: blob_animate
+    100006: blob_bind
+    100008: blobSmoothProxyGroup
+    100010: fineHeadControl
+    100012: head
+    100014: head 1
+    100016: head_group
+    100018: head_sub_group
+    100020: mid
+    100022: mid 1
+    100024: mid_group
+    100026: mid_sub_group
+    100028: neg_x
+    100030: neg_x 1
+    100032: neg_x_group
+    100034: neg_x_sub_group
+    100036: neg_z
+    100038: neg_z 1
+    100040: neg_z_group
+    100042: neg_z_sub_group
+    100044: pos_x
+    100046: pos_x 1
+    100048: pos_x_group
+    100050: pos_x_sub_group
+    100052: pos_z
+    100054: pos_z 1
+    100056: pos_z_group
+    100058: pos_z_sub_group
+    100060: squash_n_stretch_control
+    400000: //RootNode
+    400002: blob
+    400004: blob_animate
+    400006: blob_bind
+    400008: blobSmoothProxyGroup
+    400010: fineHeadControl
+    400012: head
+    400014: head 1
+    400016: head_group
+    400018: head_sub_group
+    400020: mid
+    400022: mid 1
+    400024: mid_group
+    400026: mid_sub_group
+    400028: neg_x
+    400030: neg_x 1
+    400032: neg_x_group
+    400034: neg_x_sub_group
+    400036: neg_z
+    400038: neg_z 1
+    400040: neg_z_group
+    400042: neg_z_sub_group
+    400044: pos_x
+    400046: pos_x 1
+    400048: pos_x_group
+    400050: pos_x_sub_group
+    400052: pos_z
+    400054: pos_z 1
+    400056: pos_z_group
+    400058: pos_z_sub_group
+    400060: squash_n_stretch_control
+    4300000: blob
+    9500000: //RootNode
+    13700000: blob
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 50
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
