@@ -26,6 +26,8 @@ public class Blob : MonoBehaviour {
 	[SerializeField]
 	private Animator blobAnimator = null;
 	[SerializeField]
+	private Animator blobInnerAnimator = null;
+	[SerializeField]
 	private BlobMaterial currentMaterial = null;
 	[SerializeField]
 	private SkinnedMeshRenderer meshRenderer = null;
@@ -80,6 +82,9 @@ public class Blob : MonoBehaviour {
 		this.blobAnimator.SetFloat ("_VelY", this.rigidBody.velocity.y);
 		this.blobAnimator.SetFloat ("_VelH", horizontalVelocity);
 		this.blobAnimator.SetBool ("Grounded", this.Grounded);
+		this.blobInnerAnimator.SetFloat ("_VelY", this.rigidBody.velocity.y);
+		this.blobInnerAnimator.SetFloat ("_VelH", horizontalVelocity);
+		this.blobInnerAnimator.SetBool ("Grounded", this.Grounded);
 
 		if (this.rigidBody.velocity != Vector3.zero) {
 			Vector3 lookRotation = new Vector3 (this.rigidBody.velocity.x, 0f, this.rigidBody.velocity.z);
