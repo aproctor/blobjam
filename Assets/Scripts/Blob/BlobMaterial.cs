@@ -7,4 +7,6 @@ public class BlobMaterial : ScriptableObject {
 
 	public Blob.BlobAttr[] blobAttrs;
 
+	public GameObject materialEffect = null;
+
 }

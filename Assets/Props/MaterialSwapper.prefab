@@ -69,7 +69,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 14a013a0a1678431cbbc02bb829933ea, type: 2}
+  - {fileID: 2100000, guid: 04df77297523440308bc8103cc533483, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1a36c7d62f0412a9da886ff573a5e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 11400000, guid: 6b1352e22c3554881b1c151f1d18bc5f, type: 2}
+  mat: {fileID: 11400000, guid: 62fc7136a604f47289ad9109675b4cb9, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -50,6 +50,8 @@ public class Blob : MonoBehaviour {
 	[SerializeField]
 	private SkinnedMeshRenderer meshRenderer = null;
 
+	private GameObject matEffect = null;
+
 	public bool Grounded {
 		get {
 			return Mathf.Abs(this.rigidBody.velocity.y) < groundedJumpTolerance;
@@ -160,14 +162,24 @@ public class Blob : MonoBehaviour {
 	public void ApplyMat(BlobMaterial blobMat, bool firstMaterial = false) {
 		this.meshRenderer.material = blobMat.mat;
 
-		if (firstMaterial) {
-			this.ApplyAttrs(blobMat.blobAttrs);
-		}
 		if (this.currentMaterial != blobMat) {
-			this.RevertAttrs(this.currentMaterial.blobAttrs);
-			this.currentMaterial = blobMat;
-			this.ApplyAttrs(blobMat.blobAttrs);
+			this.RevertAttrs (this.currentMaterial.blobAttrs);
+			if(this.matEffect != null) {
+				GameObject.Destroy(this.matEffect);
+				this.matEffect = null;
+			}
 		}
+
+		if (firstMaterial || this.currentMaterial != blobMat) {
+			this.currentMaterial = blobMat;
+			this.ApplyAttrs (blobMat.blobAttrs);
+
+			if(blobMat.materialEffect != null) {
+				this.matEffect = (GameObject)GameObject.Instantiate(blobMat.materialEffect, this.transform.position, Quaternion.identity);
+				this.matEffect.transform.parent = this.transform;
+			}
+		}
+
 	}
 
 	private void ApplyAttrs (BlobAttr[] attrArray) {

@@ -646,6 +646,7 @@ MonoBehaviour:
   runSpeed: 10
   jumpForce: 8
   groundedJumpTolerance: .0399999991
+  defaultAttrs: []
   minScale: .5
   maxScale: 3
   splitScale: .800000012
@@ -655,7 +656,7 @@ MonoBehaviour:
   blobAnimator: {fileID: 9508240}
   blobInnerAnimator: {fileID: 9531714}
   currentMaterial: {fileID: 11400000, guid: 6bc540f9a535a43f38b247a9b382ad1b, type: 2}
-  meshRenderer: {fileID: 0}
+  meshRenderer: {fileID: 13767680}
 --- !u!135 &13561120
 SphereCollider:
   m_ObjectHideFlags: 1

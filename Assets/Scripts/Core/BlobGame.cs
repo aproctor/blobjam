@@ -38,6 +38,7 @@ public class BlobGame : MonoBehaviour {
 			this.levelManager = this.GetComponent<LevelManager>();
 			this.NumBlobs = 1;
 		} else {
+			GameObject.Destroy(this.gameObject);
 			Debug.Log("There can only be one! BlobGame singleton freakout");
 		}
 	}
