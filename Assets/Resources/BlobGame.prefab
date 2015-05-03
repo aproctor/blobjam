@@ -338,6 +338,7 @@ MonoBehaviour:
   Levels:
   - Level1
   - Level2
+  - Level3
 --- !u!222 &22211054
 CanvasRenderer:
   m_ObjectHideFlags: 1
