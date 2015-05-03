@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Name: rock
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: 14a013a0a1678431cbbc02bb829933ea, type: 2}
+  blobAttrs:
+  - key: INV_LASER
+    value: 1

@@ -17,11 +17,20 @@ public class LaserBeam : MonoBehaviour {
 	
 
 
-	void OnTriggerEnter(Collider other) {
-		//TODO normalize position
-		this.endPoint.transform.position = other.transform.position;
+	void OnTriggerStay(Collider other) {
+		this.endPoint.transform.position = new Vector3(this.endPoint.transform.position.x, this.endPoint.transform.position.y, other.transform.position.z);
+
+		Blob blob = other.GetComponent<Blob>();
+		if (blob && blob.AttrValue(BlobConstants.INV_LASER) < 1) {
+			blob.Die();
+			this.RefreshLaser();
+		}
 	}
 
+	
+	void OnTriggerExit(Collider other) {
+		this.RefreshLaser ();
+	}
 
 	private void RefreshLaser() {
 		this.endPoint.Reset();
