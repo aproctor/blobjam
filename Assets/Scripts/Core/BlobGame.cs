@@ -37,7 +37,16 @@ public class BlobGame : MonoBehaviour {
 
 			this.levelManager = this.GetComponent<LevelManager>();
 			this.NumBlobs = 1;
+
+			string[] layers = new string[] {
+				"rock", "ice", "fire", "water"
+			};
+			foreach(string layer in layers) {
+				Physics.IgnoreLayerCollision(LayerMask.NameToLayer(layer),LayerMask.NameToLayer("ignore_" + layer));
+			}
+
 		} else {
+			GameObject.Destroy(this.gameObject);
 			Debug.Log("There can only be one! BlobGame singleton freakout");
 		}
 	}

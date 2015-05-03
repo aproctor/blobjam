@@ -50,6 +50,8 @@ public class Blob : MonoBehaviour {
 	[SerializeField]
 	private SkinnedMeshRenderer meshRenderer = null;
 
+	private GameObject matEffect = null;
+
 	public bool Grounded {
 		get {
 			return Mathf.Abs(this.rigidBody.velocity.y) < groundedJumpTolerance;
@@ -99,10 +101,16 @@ public class Blob : MonoBehaviour {
 		float zSqr = Mathf.Pow(this.rigidBody.velocity.z, 2);
 
 		float horizontalVelocity = Mathf.Sqrt(xSqr + zSqr);
-		this.blobAnimator.SetFloat ("_VelY", this.rigidBody.velocity.y);
+		float verticalVelocity = this.rigidBody.velocity.y;
+		if (this.AttrValue (BlobConstants.PAUSE_ANIM) > 0) {
+			horizontalVelocity = 0f;
+			verticalVelocity = 0f;
+		}
+		
+		this.blobAnimator.SetFloat ("_VelY", verticalVelocity);
 		this.blobAnimator.SetFloat ("_VelH", horizontalVelocity);
 		this.blobAnimator.SetBool ("Grounded", this.Grounded);
-		this.blobInnerAnimator.SetFloat ("_VelY", this.rigidBody.velocity.y);
+		this.blobInnerAnimator.SetFloat ("_VelY", verticalVelocity);
 		this.blobInnerAnimator.SetFloat ("_VelH", horizontalVelocity);
 		this.blobInnerAnimator.SetBool ("Grounded", this.Grounded);
 
@@ -157,14 +165,31 @@ public class Blob : MonoBehaviour {
 	public void ApplyMat(BlobMaterial blobMat, bool firstMaterial = false) {
 		this.meshRenderer.material = blobMat.mat;
 
-		if (firstMaterial) {
-			this.ApplyAttrs(blobMat.blobAttrs);
-		}
 		if (this.currentMaterial != blobMat) {
-			this.RevertAttrs(this.currentMaterial.blobAttrs);
-			this.currentMaterial = blobMat;
-			this.ApplyAttrs(blobMat.blobAttrs);
+			this.RevertAttrs (this.currentMaterial.blobAttrs);
+			if(this.matEffect != null) {
+				GameObject.Destroy(this.matEffect);
+				this.matEffect = null;
+			}
 		}
+
+		if (firstMaterial || this.currentMaterial != blobMat) {
+			this.currentMaterial = blobMat;
+			this.ApplyAttrs (blobMat.blobAttrs);
+
+			if(blobMat.materialEffect != null) {
+				this.matEffect = (GameObject)GameObject.Instantiate(blobMat.materialEffect, this.transform.position, Quaternion.identity);
+				this.matEffect.transform.parent = this.transform;
+			}
+
+			int layerId = blobMat.LayerId;
+			if(layerId < 0) {
+				this.gameObject.layer = LayerMask.GetMask("Default");
+			} else {
+				this.gameObject.layer = layerId;
+			}
+		}
+
 	}
 
 	private void ApplyAttrs (BlobAttr[] attrArray) {
