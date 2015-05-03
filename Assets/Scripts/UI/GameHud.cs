@@ -9,6 +9,9 @@ public class GameHud : MonoBehaviour {
 	private Canvas canvas = null;
 
 	[SerializeField]
+	private GameObject GameOverText = null;
+
+	[SerializeField]
 	private Text livesField;
 
 	void Start() {
@@ -27,5 +30,13 @@ public class GameHud : MonoBehaviour {
 	public void Hide() {
 		this.canvas.gameObject.SetActive (false);
 	}
-	
+
+	public void ShowGameOver(bool win = false) {
+		//TODO happy message for win
+		this.GameOverText.SetActive (true);
+	}
+
+	public void HideGameOver() {
+		this.GameOverText.SetActive (false);
+	}
 }

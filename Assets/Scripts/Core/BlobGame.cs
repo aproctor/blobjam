@@ -99,9 +99,11 @@ public class BlobGame : MonoBehaviour {
 	void Update() {
 		if (this.state == GameState.Over) {			
 			if (Input.GetButtonDown ("Cancel")) {
+				this.hud.HideGameOver ();
 				this.levelManager.ReloadLevel ();
 			}
 			if (Input.GetButtonDown ("Jump")) {
+				this.hud.HideGameOver ();
 				this.levelManager.LoadMenu ();
 			}
 		} else {
@@ -144,7 +146,7 @@ public class BlobGame : MonoBehaviour {
 	}
 
 	public void GameOver() {
-		Debug.LogError ("GAME OVER!");
+		this.hud.ShowGameOver ();
 		this.state = GameState.Over;
 	}
 }

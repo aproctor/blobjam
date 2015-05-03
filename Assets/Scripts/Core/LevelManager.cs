@@ -30,7 +30,7 @@ public class LevelManager : MonoBehaviour {
 		if (this.curLevel < this.Levels.Length - 1) {
 			LoadLevel(++this.curLevel);
 		} else {
-			LoadMenu();
+			BlobGame.Instance.GameOver();
 		}
 	}
 
