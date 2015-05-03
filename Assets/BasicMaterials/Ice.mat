@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: IceBlock
+  m_Name: Ice
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
   m_LightmapFlags: 1
@@ -134,12 +134,12 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: 3.2984426, g: 4.66331768, b: 11.2147055, a: 11.817647}
+        second: {r: 0, g: 8.03055286, b: 11.3051472, a: 12.3000002}
       data:
         first:
           name: _Color
-        second: {r: .327800572, g: .768732071, b: .948529422, a: .223529413}
+        second: {r: .327800572, g: .87147361, b: .948529422, a: .56078434}
       data:
         first:
           name: _EmissionColorUI
-        second: {r: .268166065, g: .379131526, b: .911764681, a: .960784316}
+        second: {r: 0, g: .652890444, b: .91911763, a: 1}

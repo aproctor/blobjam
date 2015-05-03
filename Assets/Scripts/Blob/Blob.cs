@@ -181,6 +181,13 @@ public class Blob : MonoBehaviour {
 				this.matEffect = (GameObject)GameObject.Instantiate(blobMat.materialEffect, this.transform.position, Quaternion.identity);
 				this.matEffect.transform.parent = this.transform;
 			}
+
+			int layerId = blobMat.LayerId;
+			if(layerId < 0) {
+				this.gameObject.layer = LayerMask.GetMask("Default");
+			} else {
+				this.gameObject.layer = layerId;
+			}
 		}
 
 	}

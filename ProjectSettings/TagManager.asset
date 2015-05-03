@@ -14,14 +14,14 @@ TagManager:
   - 
   - 
   - Laser
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - rock
+  - ice
+  - fire
+  - water
+  - ignore_rock
+  - ignore_ice
+  - ignore_fire
+  - ignore_water
   - 
   - 
   - 

@@ -9,4 +9,10 @@ public class BlobMaterial : ScriptableObject {
 
 	public GameObject materialEffect = null;
 
+	public int LayerId {
+		get {
+			return LayerMask.NameToLayer (this.name);
+		}
+	}
+
 }

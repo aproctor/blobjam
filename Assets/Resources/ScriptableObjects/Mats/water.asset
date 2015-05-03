@@ -9,10 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 002475d4133164b67b6aa1dd69cf91eb, type: 3}
-  m_Name: ice
+  m_Name: water
   m_EditorClassIdentifier: 
-  mat: {fileID: 2100000, guid: 82d4127724b3c4f149cbfeeac3bc7643, type: 2}
-  blobAttrs:
-  - key: PAUSE_ANIM
-    value: 1
-  materialEffect: {fileID: 166612, guid: d08649eb027ca410ba52e4120820bea8, type: 2}
+  mat: {fileID: 2100000, guid: 210c42364d68c52418071e53b5e9b333, type: 2}
+  blobAttrs: []
+  materialEffect: {fileID: 0}
