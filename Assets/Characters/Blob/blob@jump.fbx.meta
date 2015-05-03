@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: cf518d02ac1376545a114c5bdebfb597
+timeCreated: 1430614712
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: blob:blob_animate
+    100002: blob:blob_bind
+    100004: blob:bottom_control
+    100006: blob:fineHeadControl
+    100008: blob:head
+    100010: blob:head_group
+    100012: blob:head_sub_group
+    100014: blob:mid
+    100016: blob:mid_group
+    100018: blob:mid_sub_group
+    100020: blob:neg_x
+    100022: blob:neg_x_group
+    100024: blob:neg_x_sub_group
+    100026: blob:neg_z
+    100028: blob:neg_z_group
+    100030: blob:neg_z_sub_group
+    100032: blob:pos_x
+    100034: blob:pos_x_group
+    100036: blob:pos_x_sub_group
+    100038: blob:pos_z
+    100040: blob:pos_z_group
+    100042: blob:pos_z_sub_group
+    100044: blob:squash_n_stretch_control
+    100046: //RootNode
+    400000: blob:blob_animate
+    400002: blob:blob_bind
+    400004: blob:bottom_control
+    400006: blob:fineHeadControl
+    400008: blob:head
+    400010: blob:head_group
+    400012: blob:head_sub_group
+    400014: blob:mid
+    400016: blob:mid_group
+    400018: blob:mid_sub_group
+    400020: blob:neg_x
+    400022: blob:neg_x_group
+    400024: blob:neg_x_sub_group
+    400026: blob:neg_z
+    400028: blob:neg_z_group
+    400030: blob:neg_z_sub_group
+    400032: blob:pos_x
+    400034: blob:pos_x_group
+    400036: blob:pos_x_sub_group
+    400038: blob:pos_z
+    400040: blob:pos_z_group
+    400042: blob:pos_z_sub_group
+    400044: blob:squash_n_stretch_control
+    400046: //RootNode
+    7400000: jump
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: jump
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: blob:blob_animate
+        weight: 1
+      - path: blob:blob_animate/blob:bottom_control
+        weight: 1
+      - path: blob:blob_animate/blob:head_group
+        weight: 1
+      - path: blob:blob_animate/blob:head_group/blob:fineHeadControl
+        weight: 1
+      - path: blob:blob_animate/blob:head_group/blob:head_sub_group
+        weight: 1
+      - path: blob:blob_animate/blob:mid_group
+        weight: 1
+      - path: blob:blob_animate/blob:mid_group/blob:mid_sub_group
+        weight: 1
+      - path: blob:blob_animate/blob:neg_x_group
+        weight: 1
+      - path: blob:blob_animate/blob:neg_x_group/blob:neg_x_sub_group
+        weight: 1
+      - path: blob:blob_animate/blob:neg_z_group
+        weight: 1
+      - path: blob:blob_animate/blob:neg_z_group/blob:neg_z_sub_group
+        weight: 1
+      - path: blob:blob_animate/blob:pos_x_group
+        weight: 1
+      - path: blob:blob_animate/blob:pos_x_group/blob:pos_x_sub_group
+        weight: 1
+      - path: blob:blob_animate/blob:pos_z_group
+        weight: 1
+      - path: blob:blob_animate/blob:pos_z_group/blob:pos_z_sub_group
+        weight: 1
+      - path: blob:blob_bind
+        weight: 1
+      - path: blob:blob_bind/blob:head
+        weight: 1
+      - path: blob:blob_bind/blob:mid
+        weight: 1
+      - path: blob:blob_bind/blob:neg_x
+        weight: 1
+      - path: blob:blob_bind/blob:neg_z
+        weight: 1
+      - path: blob:blob_bind/blob:pos_x
+        weight: 1
+      - path: blob:blob_bind/blob:pos_z
+        weight: 1
+      - path: blob:squash_n_stretch_control
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 50
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
