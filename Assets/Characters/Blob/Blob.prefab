@@ -551,7 +551,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.88, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 479342}
@@ -652,7 +652,8 @@ MonoBehaviour:
   fireSplits: 0
   weight: 1
   killY: -10
-  blobAnimator: {fileID: 0}
+  blobAnimator: {fileID: 9508240}
+  blobInnerAnimator: {fileID: 9531714}
   currentMaterial: {fileID: 11400000, guid: 6bc540f9a535a43f38b247a9b382ad1b, type: 2}
   meshRenderer: {fileID: 0}
 --- !u!135 &13561120
