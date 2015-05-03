@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: 9aa6f9371a1874383be8cf1fc82b5bd6, type: 2}
   blobAttrs: []
-  materialEffect: {fileID: 0}
+  materialEffect: {fileID: 114722, guid: 527bc0a400d104c75bac46951f0f47db, type: 2}

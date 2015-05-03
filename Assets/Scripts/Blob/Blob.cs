@@ -18,12 +18,22 @@ public class Blob : MonoBehaviour {
 
 	#region attrs
 	[Header("Movement")]
-	public bool selected = true;
+	private bool selected = true;
+	public bool Selected {
+		get {
+			return selected;
+		}
+		set {
+			this.selected = value;
+			this.selectedIndicator.SetActive (value);
+		}
+	}
 	public float moveSpeed = 5f;
 	public float walkSpeed = 5f;
 	public float runSpeed = 10f;
 	public float jumpForce = 10f;
 	public float groundedJumpTolerance = 0.04f;
+	public bool startSelected = true;
 
 	[SerializeField]
 	private BlobAttr[] defaultAttrs;
@@ -49,6 +59,10 @@ public class Blob : MonoBehaviour {
 	private BlobMaterial currentMaterial = null;
 	[SerializeField]
 	private SkinnedMeshRenderer meshRenderer = null;
+	[SerializeField]
+	private SkinnedMeshRenderer internalmeshRenderer = null;
+	[SerializeField]
+	private GameObject selectedIndicator = null;
 
 	private GameObject matEffect = null;
 
@@ -73,6 +87,8 @@ public class Blob : MonoBehaviour {
 		this.ApplyAttrs (this.defaultAttrs);
 
 		this.ApplyMat(currentMaterial, true);
+
+		this.Selected = this.startSelected;
 	}
 
 	#region update_methods
@@ -145,10 +161,11 @@ public class Blob : MonoBehaviour {
 	#endregion
 
 	public void Die() {
-		BlobGame.Instance.RemoveBlob ();
+		BlobGame.Instance.RemoveBlob (this);
 		//TODO tween time
 		GameObject.Destroy (this.gameObject);
 	}
+
 
 
 	public void Split() {
@@ -158,12 +175,13 @@ public class Blob : MonoBehaviour {
 		}
 		this.transform.localScale = Vector3.one * targetScale;
 		this.weight *= 0.5f;
-		GameObject.Instantiate (this);
-		BlobGame.Instance.AddBlob ();
+		Blob newBlob = GameObject.Instantiate (this).GetComponent<Blob>();
+		BlobGame.Instance.AddBlob (newBlob);
 	}
 
 	public void ApplyMat(BlobMaterial blobMat, bool firstMaterial = false) {
 		this.meshRenderer.material = blobMat.mat;
+		this.internalmeshRenderer.material = blobMat.mat;
 
 		if (this.currentMaterial != blobMat) {
 			this.RevertAttrs (this.currentMaterial.blobAttrs);
