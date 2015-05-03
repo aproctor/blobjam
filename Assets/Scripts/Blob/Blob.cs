@@ -97,17 +97,20 @@ public class Blob : MonoBehaviour {
 
 
 	void UpdateAnimations() {
-		if (this.AttrValue ("PAUSE_ANIM") > 0) {
-			return;
-		}
 		float xSqr = Mathf.Pow(this.rigidBody.velocity.x, 2);
 		float zSqr = Mathf.Pow(this.rigidBody.velocity.z, 2);
 
 		float horizontalVelocity = Mathf.Sqrt(xSqr + zSqr);
-		this.blobAnimator.SetFloat ("_VelY", this.rigidBody.velocity.y);
+		float verticalVelocity = this.rigidBody.velocity.y;
+		if (this.AttrValue (BlobConstants.PAUSE_ANIM) > 0) {
+			horizontalVelocity = 0f;
+			verticalVelocity = 0f;
+		}
+		
+		this.blobAnimator.SetFloat ("_VelY", verticalVelocity);
 		this.blobAnimator.SetFloat ("_VelH", horizontalVelocity);
 		this.blobAnimator.SetBool ("Grounded", this.Grounded);
-		this.blobInnerAnimator.SetFloat ("_VelY", this.rigidBody.velocity.y);
+		this.blobInnerAnimator.SetFloat ("_VelY", verticalVelocity);
 		this.blobInnerAnimator.SetFloat ("_VelH", horizontalVelocity);
 		this.blobInnerAnimator.SetBool ("Grounded", this.Grounded);
 

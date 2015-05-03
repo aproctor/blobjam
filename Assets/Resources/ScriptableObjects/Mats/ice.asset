@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: 04df77297523440308bc8103cc533483, type: 2}
   blobAttrs:
-  - key: PAUSE_ANIM_NOOOOOOO
+  - key: PAUSE_ANIM
     value: 1
   materialEffect: {fileID: 166612, guid: d08649eb027ca410ba52e4120820bea8, type: 2}
