@@ -1,7 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Blob : MonoBehaviour {
+
+	[System.Serializable]
+	public struct BlobAttr
+	{
+		public string key;
+		public int value;
+
+		BlobAttr(string k, int v) {
+			key = k;
+			value = v;
+		}
+	}
 
 	#region attrs
 	[Header("Movement")]
@@ -11,6 +24,11 @@ public class Blob : MonoBehaviour {
 	public float runSpeed = 10f;
 	public float jumpForce = 10f;
 	public float groundedJumpTolerance = 0.04f;
+
+	[SerializeField]
+	private BlobAttr[] defaultAttrs;
+
+	private Dictionary<string, int> attrs = null;
 
 	[Header("Split Controls")]
 	public float minScale = 0.5f;
@@ -46,9 +64,11 @@ public class Blob : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this.rigidBody = this.GetComponent<Rigidbody> ();
-		//this.blobAnimator = this.GetComponent<Animator> ();
+		this.attrs = new Dictionary<string, int> ();
 
-		this.ApplyMat(currentMaterial);
+		this.ApplyAttrs (this.defaultAttrs);
+
+		this.ApplyMat(currentMaterial, true);
 	}
 
 	#region update_methods
@@ -129,8 +149,35 @@ public class Blob : MonoBehaviour {
 		BlobGame.Instance.AddBlob ();
 	}
 
-	public void ApplyMat(BlobMaterial blobMat) {
+	public void ApplyMat(BlobMaterial blobMat, bool firstMaterial = false) {
 		this.meshRenderer.material = blobMat.mat;
-		this.currentMaterial = blobMat;
+
+		if (firstMaterial) {
+			this.ApplyAttrs(blobMat.blobAttrs);
+		}
+		if (this.currentMaterial != blobMat) {
+			this.RevertAttrs(this.currentMaterial.blobAttrs);
+			this.currentMaterial = blobMat;
+			this.ApplyAttrs(blobMat.blobAttrs);
+		}
+	}
+
+	private void ApplyAttrs (BlobAttr[] attrArray) {
+		foreach (BlobAttr a in attrArray) {
+			this.attrs[a.key] = this.AttrValue(a.key) + a.value;
+		}
+	}
+	
+	private void RevertAttrs(BlobAttr[] attrArray) {
+		foreach (BlobAttr a in attrArray) {
+			this.attrs[a.key] = this.AttrValue(a.key) - a.value;
+		}
+	}
+
+	public int AttrValue(string key) {
+		if(this.attrs.ContainsKey(key)) {
+			return this.attrs[key];
+		}
+		return 0;
 	}
 }
