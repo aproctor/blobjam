@@ -6913,6 +6913,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 129962, guid: 22446bc45292f4f759c366afac0f2d8e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5400654, guid: 22446bc45292f4f759c366afac0f2d8e, type: 2}
     - {fileID: 11420206, guid: 22446bc45292f4f759c366afac0f2d8e, type: 2}
@@ -13422,8 +13426,8 @@ Camera:
   m_GameObject: {fileID: 1635642514}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: .669117689, g: .669117689, b: .669117689, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
