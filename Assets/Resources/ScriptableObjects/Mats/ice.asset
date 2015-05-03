@@ -15,4 +15,6 @@ MonoBehaviour:
   blobAttrs:
   - key: PAUSE_ANIM
     value: 1
+  - key: INV_LASER
+    value: 1
   materialEffect: {fileID: 166612, guid: d08649eb027ca410ba52e4120820bea8, type: 2}
