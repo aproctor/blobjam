@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 002475d4133164b67b6aa1dd69cf91eb, type: 3}
   m_Name: water
   m_EditorClassIdentifier: 
-  mat: {fileID: 2100000, guid: 210c42364d68c52418071e53b5e9b333, type: 2}
+  mat: {fileID: 2100000, guid: 022dbdb7f1c524b1cbd9598674092a88, type: 2}
   blobAttrs: []
   materialEffect: {fileID: 0}

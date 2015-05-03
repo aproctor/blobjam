@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 002475d4133164b67b6aa1dd69cf91eb, type: 3}
   m_Name: fire
   m_EditorClassIdentifier: 
-  mat: {fileID: 2100000, guid: 210c42364d68c52418071e53b5e9b333, type: 2}
+  mat: {fileID: 2100000, guid: 9aa6f9371a1874383be8cf1fc82b5bd6, type: 2}
   blobAttrs: []
   materialEffect: {fileID: 0}
