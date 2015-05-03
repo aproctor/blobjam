@@ -39,7 +39,7 @@ public class BlobGame : MonoBehaviour {
 			this.NumBlobs = 1;
 
 			string[] layers = new string[] {
-				"rock", "ice", "fire", "water"
+				"slime","rock", "ice", "fire", "water"
 			};
 			foreach(string layer in layers) {
 				Physics.IgnoreLayerCollision(LayerMask.NameToLayer(layer),LayerMask.NameToLayer("ignore_" + layer));

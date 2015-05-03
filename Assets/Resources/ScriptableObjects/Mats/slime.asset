@@ -9,6 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 002475d4133164b67b6aa1dd69cf91eb, type: 3}
-  m_Name: default
+  m_Name: slime
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: 210c42364d68c52418071e53b5e9b333, type: 2}
+  blobAttrs: []
+  materialEffect: {fileID: 0}

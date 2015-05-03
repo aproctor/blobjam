@@ -18,12 +18,12 @@ TagManager:
   - ice
   - fire
   - water
-  - ignore_rock
+  - slime
   - ignore_ice
   - ignore_fire
   - ignore_water
-  - 
-  - 
+  - ignore_slime
+  - ignore_rock
   - 
   - 
   - 

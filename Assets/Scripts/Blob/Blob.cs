@@ -114,8 +114,8 @@ public class Blob : MonoBehaviour {
 		this.blobInnerAnimator.SetFloat ("_VelH", horizontalVelocity);
 		this.blobInnerAnimator.SetBool ("Grounded", this.Grounded);
 
-		if (this.rigidBody.velocity != Vector3.zero) {
-			Vector3 lookRotation = new Vector3 (this.rigidBody.velocity.x, 0f, this.rigidBody.velocity.z);
+		Vector3 lookRotation = new Vector3 (this.rigidBody.velocity.x, 0f, this.rigidBody.velocity.z);
+		if (lookRotation != Vector3.zero) {
 			this.transform.rotation = Quaternion.LookRotation (-lookRotation);
 		}
 	}
@@ -193,12 +193,18 @@ public class Blob : MonoBehaviour {
 	}
 
 	private void ApplyAttrs (BlobAttr[] attrArray) {
+		if (attrArray == null) {
+			return;
+		}
 		foreach (BlobAttr a in attrArray) {
 			this.attrs[a.key] = this.AttrValue(a.key) + a.value;
 		}
 	}
 	
 	private void RevertAttrs(BlobAttr[] attrArray) {
+		if (attrArray == null) {
+			return;
+		}
 		foreach (BlobAttr a in attrArray) {
 			this.attrs[a.key] = this.AttrValue(a.key) - a.value;
 		}

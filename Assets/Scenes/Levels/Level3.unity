@@ -44,7 +44,7 @@ LevelGameManager:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -68,7 +68,8 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-  m_LightmapSnapshot: {fileID: 0}
+  m_LightmapSnapshot: {fileID: 112000000, guid: 7026a30ebcc434d19a95b0eadfe3717e,
+    type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
 NavMeshSettings:
@@ -12737,11 +12738,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 455874, guid: f95c08e94a70a4f48b6e2b73e4fd56e0, type: 2}
   m_PrefabInternal: {fileID: 1520377817}
---- !u!95 &1530606080
-Animator:
-  m_PrefabParentObject: {fileID: 9521810, guid: 22446bc45292f4f759c366afac0f2d8e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1861912947}
 --- !u!1001 &1543807861
 Prefab:
   m_ObjectHideFlags: 0
@@ -14790,6 +14786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectives:
   - {fileID: 498490419}
+  scrollSpeed: 30
 --- !u!1001 &1820021123
 Prefab:
   m_ObjectHideFlags: 0
@@ -15191,7 +15188,7 @@ Prefab:
     - target: {fileID: 11420206, guid: 22446bc45292f4f759c366afac0f2d8e, type: 2}
       propertyPath: blobAnimator
       value: 
-      objectReference: {fileID: 1530606080}
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9586434, guid: 22446bc45292f4f759c366afac0f2d8e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 22446bc45292f4f759c366afac0f2d8e, type: 2}
