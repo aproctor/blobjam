@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(state == MenuState.Idle) {
-			if(Input.GetButtonDown("Jump")) {
+			if(Input.anyKeyDown) {
 				BlobGame.Instance.levelManager.LoadLevel(0);
 				state = MenuState.Exiting;
 			}

@@ -49,7 +49,7 @@ public class ButtonProp : MonoBehaviour {
 
 
 	void OnTriggerExit(Collider other) {
-		if (other.GetComponent<ButtonPresser> () && numCurrentPressers == 0) {
+		if (other.GetComponent<ButtonPresser> ()) { // && numCurrentPressers == 0) {
 			//TODO check for multiple things pressing the button
 			buttonReleased.Invoke();
 		}
