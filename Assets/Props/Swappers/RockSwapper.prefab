@@ -11,7 +11,7 @@ GameObject:
   - 65: {fileID: 6599042}
   - 114: {fileID: 11416132}
   m_Layer: 0
-  m_Name: MaterialSwapper
+  m_Name: RockSwapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b1a36c7d62f0412a9da886ff573a5e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 11400000, guid: 3d5c242ee2e42423699c42427a80619c, type: 2}
+  mat: {fileID: 11400000, guid: 6b1352e22c3554881b1c151f1d18bc5f, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
