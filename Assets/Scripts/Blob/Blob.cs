@@ -93,6 +93,9 @@ public class Blob : MonoBehaviour {
 
 
 	void UpdateAnimations() {
+		if (this.AttrValue ("PAUSE_ANIM") > 0) {
+			return;
+		}
 		float xSqr = Mathf.Pow(this.rigidBody.velocity.x, 2);
 		float zSqr = Mathf.Pow(this.rigidBody.velocity.z, 2);
 
