@@ -131,7 +131,9 @@ public class BlobGame : MonoBehaviour {
 	public void RemoveBlob (Blob blob) {
 		this.blobs.Remove (blob);
 
-		if(this.NumBlobs <= 0) {
+		if (this.NumBlobs > 0) {
+			this.ToggleSelection();
+		} else {
 			//Not ready to do this, level loads cause loops
 			if(this.levelManager.Level.IsComplete) {
 				this.levelManager.LoadNextLevel();
