@@ -9,6 +9,15 @@ public class Level : MonoBehaviour {
 		BlobGame.Instance.levelManager.LevelLoaded(this);
 	}
 
+	public float scrollSpeed = 30f;
+
+	public void Update() {
+		float move = Input.GetAxis ("Mouse ScrollWheel");
+		if (Mathf.Abs (move) > 0f) {
+			this.transform.Rotate(new Vector3(0f, move) * scrollSpeed * Time.deltaTime);
+		}
+	}
+
 	public bool IsComplete {
 		get {
 			foreach (Objective objective in this.objectives) {
