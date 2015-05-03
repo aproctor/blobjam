@@ -81,9 +81,18 @@ public class Blob : MonoBehaviour {
 		this.blobAnimator.SetFloat ("_VelH", horizontalVelocity);
 		this.blobAnimator.SetBool ("Grounded", this.Grounded);
 
+		if (this.rigidBody.velocity != Vector3.zero) {
+			Vector3 lookRotation = new Vector3 (this.rigidBody.velocity.x, 0f, this.rigidBody.velocity.z);
+			this.transform.rotation = Quaternion.LookRotation (-lookRotation);
+		}
 	}
 
 	void UpdateInputMovement() {
+		float horizontal = Input.GetAxis ("Horizontal");
+		float vertical = Input.GetAxis ("Vertical");
+		
+		Vector3 targetSpeed = new Vector3 (vertical, 0f, -horizontal) * moveSpeed;
+		targetSpeed.y = this.rigidBody.velocity.y;
 
 		if (Input.GetButton ("Fire2") || Input.GetButton ("Run")) {
 			this.moveSpeed = runSpeed;
@@ -92,15 +101,12 @@ public class Blob : MonoBehaviour {
 		}
 
 		if (Input.GetButtonDown ("Jump") && this.Grounded) {
-			this.rigidBody.AddForce(new Vector3(0f, jumpForce, 0f));
+			targetSpeed += new Vector3(0f, jumpForce, 0f);
 		} 
 
-		float horizontal = Input.GetAxis ("Horizontal");
-		float vertical = Input.GetAxis ("Vertical");
-
-		Vector3 targetSpeed = new Vector3 (vertical, 0f, -horizontal) * moveSpeed;
-
-		this.rigidBody.AddForce(targetSpeed - this.rigidBody.velocity, ForceMode.VelocityChange);
+		if (targetSpeed != Vector3.zero) {
+			this.rigidBody.AddForce (targetSpeed - this.rigidBody.velocity, ForceMode.VelocityChange);
+		}
 		//this.transform.position = this.transform.position + new Vector3 (vertical, 0f, -horizontal) * moveSpeed * Time.deltaTime;
 	}
 	#endregion
