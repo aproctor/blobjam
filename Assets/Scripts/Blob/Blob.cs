@@ -81,8 +81,10 @@ public class Blob : MonoBehaviour {
 		this.blobAnimator.SetFloat ("_VelH", horizontalVelocity);
 		this.blobAnimator.SetBool ("Grounded", this.Grounded);
 
-		Vector3 lookRotation = new Vector3(this.rigidBody.velocity.x, 0f, this.rigidBody.velocity.z);
-		this.transform.rotation = Quaternion.LookRotation(-lookRotation);
+		if (this.rigidBody.velocity != Vector3.zero) {
+			Vector3 lookRotation = new Vector3 (this.rigidBody.velocity.x, 0f, this.rigidBody.velocity.z);
+			this.transform.rotation = Quaternion.LookRotation (-lookRotation);
+		}
 	}
 
 	void UpdateInputMovement() {
