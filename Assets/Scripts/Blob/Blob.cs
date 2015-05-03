@@ -25,7 +25,9 @@ public class Blob : MonoBehaviour {
 		}
 		set {
 			this.selected = value;
-			this.selectedIndicator.SetActive (value);
+			if(this.selectedIndicator) {
+				this.selectedIndicator.SetActive (value);
+			}
 		}
 	}
 	public float moveSpeed = 5f;
