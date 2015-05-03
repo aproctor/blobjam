@@ -5,6 +5,8 @@ public class Level : MonoBehaviour {
 
 	public Objective[] objectives;
 
+	public bool allowRotation = false;
+
 	public void Start() {
 		BlobGame.Instance.levelManager.LevelLoaded(this);
 	}
@@ -13,7 +15,7 @@ public class Level : MonoBehaviour {
 
 	public void Update() {
 		float move = Input.GetAxis ("Mouse ScrollWheel");
-		if (Mathf.Abs (move) > 0f) {
+		if (this.allowRotation && Mathf.Abs (move) > 0f) {
 			this.transform.Rotate(new Vector3(0f, move) * scrollSpeed * Time.deltaTime);
 		}
 	}
