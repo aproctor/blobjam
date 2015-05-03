@@ -70,7 +70,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &174014
 GameObject:
   m_ObjectHideFlags: 1
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Levels:
   - Level1
-  - Level3
+  - Level2
 --- !u!114 &11491970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -522,14 +522,14 @@ RectTransform:
   m_GameObject: {fileID: 159952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 8.03590012}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .899999976, y: .900000036, z: .900000036}
   m_Children: []
   m_Father: {fileID: 22415904}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 10.7080994}
-  m_SizeDelta: {x: 686, y: 162}
+  m_AnchoredPosition: {x: 0, y: 10.7080002}
+  m_SizeDelta: {x: 1728, y: 1080}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22433854
 RectTransform:
