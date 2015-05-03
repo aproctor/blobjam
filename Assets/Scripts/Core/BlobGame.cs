@@ -58,7 +58,7 @@ public class BlobGame : MonoBehaviour {
 		} else if(selectedBlobs.Count == 1){
 			//Select the next blob based on curSelected
 			int targetIndex = ++curSelected % this.blobs.Count;
-			bool SELECT_ALL_ON_LAST = true;
+			bool SELECT_ALL_ON_LAST = false;
 
 			if(targetIndex == 0 && SELECT_ALL_ON_LAST) {
 				foreach (Blob b in this.blobs) {

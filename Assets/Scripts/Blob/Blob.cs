@@ -177,6 +177,7 @@ public class Blob : MonoBehaviour {
 		this.weight *= 0.5f;
 		Blob newBlob = GameObject.Instantiate (this).GetComponent<Blob>();
 		BlobGame.Instance.AddBlob (newBlob);
+		newBlob.Selected = false;
 	}
 
 	public void ApplyMat(BlobMaterial blobMat, bool firstMaterial = false) {
