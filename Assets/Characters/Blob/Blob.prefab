@@ -959,7 +959,7 @@ MonoBehaviour:
   moveSpeed: 3
   walkSpeed: 3
   runSpeed: 10
-  jumpForce: 300
+  jumpForce: 8
   groundedJumpTolerance: .0399999991
   minScale: .5
   maxScale: 3
@@ -992,7 +992,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3d8abc81dc8e94ac8ac700dccd9c97ed, type: 2}
+  - {fileID: 2100000, guid: 210c42364d68c52418071e53b5e9b333, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
